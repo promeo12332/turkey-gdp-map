@@ -179,6 +179,9 @@ button.reset-selection:active {
   margin: 10px 0;
   font-size: 14px;
   color: #555;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 #comparison-section span {
@@ -197,4 +200,24 @@ button.reset-selection:active {
   padding: 10px 20px;
   font-size: 16px;
   cursor: pointer;
+}
+
+/* Bayrak stili */
+#country-flag {
+  width: 20px;
+  height: 15px;
+  margin-left: 5px;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  object-fit: cover; /* Resmin bozulmamasını sağlar */
+  image-rendering: -webkit-optimize-contrast; /* Daha net görüntü */
+  image-rendering: crisp-edges;
+  animation: none !important; /* Animasyonları kapat */
+  transition: none !important; /* Geçiş efektlerini kapat */
+  transform: none !important; /* Dönüşümleri kapat */
+  filter: none !important; /* Filtreleri kapat */
+  position: static; /* Sabit konum */
+  display: inline-block;
+  flex-shrink: 0; /* Boyutunun korunması için */
 }

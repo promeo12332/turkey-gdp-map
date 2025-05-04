@@ -81,7 +81,131 @@ const gdpData = {
   "yozgat": 4463976000,
   "zonguldak": 10043946000
 };
-
+const countryCodes = {
+  "United States": "us",
+  "China": "cn",
+  "Japan": "jp",
+  "Germany": "de",
+  "India": "in",
+  "United Kingdom": "gb",
+  "France": "fr",
+  "Italy": "it",
+  "Canada": "ca",
+  "South Korea": "kr",
+  "Russia": "ru",
+  "Brazil": "br",
+  "Australia": "au",
+  "Spain": "es",
+  "Mexico": "mx",
+  "Turkiye": "tr",
+  "Indonesia": "id",
+  "Netherlands": "nl",
+  "Saudi Arabia": "sa",
+  "Poland": "pl",
+  "Switzerland": "ch",
+  "Belgium": "be",
+  "Argentina": "ar",
+  "Sweden": "se",
+  "Ireland": "ie",
+  "Israel": "il",
+  "Singapore": "sg",
+  "United Arab Emirates": "ae",
+  "Thailand": "th",
+  "Austria": "at",
+  "Norway": "no",
+  "Philippines": "ph",
+  "Vietnam": "vn",
+  "Bangladesh": "bd",
+  "Denmark": "dk",
+  "Malaysia": "my",
+  "Colombia": "co",
+  "Hong Kong": "hk",
+  "South Africa": "za",
+  "Romania": "ro",
+  "Czech Republic": "cz",
+  "Egypt": "eg",
+  "Chile": "cl",
+  "Iran": "ir",
+  "Pakistan": "pk",
+  "Portugal": "pt",
+  "Finland": "fi",
+  "Peru": "pe",
+  "Kazakhstan": "kz",
+  "Algeria": "dz",
+  "Greece": "gr",
+  "Iraq": "iq",
+  "New Zealand": "nz",
+  "Hungary": "hu",
+  "Qatar": "qa",
+  "Ukraine": "ua",
+  "Nigeria": "ng",
+  "Morocco": "ma",
+  "Kuwait": "kw",
+  "Slovakia": "sk",
+  "Uzbekistan": "uz",
+  "Kenya": "ke",
+  "Dominican Republic": "do",
+  "Ecuador": "ec",
+  "Guatemala": "gt",
+  "Ethiopia": "et",
+  "Sudan": "sd",
+  "Oman": "om",
+  "Puerto Rico": "pr",
+  "Bulgaria": "bg",
+  "Angola": "ao",
+  "Costa Rica": "cr",
+  "Luxembourg": "lu",
+  "Sri Lanka": "lk",
+  "Croatia": "hr",
+  "Panama": "pa",
+  "Lithuania": "lt",
+  "Ghana": "gh",
+  "Tanzania": "tz",
+  "Uruguay": "uy",
+  "Ivory Coast": "ci",
+  "Azerbaijan": "az",
+  "Belarus": "by",
+  "Serbia": "rs",
+  "Slovenia": "si",
+  "DR Congo": "cd",
+  "Myanmar": "mm",
+  "Uganda": "ug",
+  "Jordan": "jo",
+  "Libya": "ly",
+  "Cameroon": "cm",
+  "Tunisia": "tn",
+  "Bahrein": "bh",
+  "Nepal": "np",
+  "Cyprus": "cy",
+  "Estonia": "ee",
+  "Latvia": "lv",
+  "Paraguay": "py",
+  "Honduras": "hn",
+  "El Salvador": "sv",
+  "Georgia": "ge",
+  "Senegal": "sn",
+  "Iceland": "is",
+  "Papua New Guinea": "pg",
+  "Zimbabwe": "zw",
+  "Bosnia and Herzegovina": "ba",
+  "Trinidad and Tobago": "tt",
+  "Zambia": "zm",
+  "Malta": "mt",
+  "Mali": "ml",
+  "Mozambique": "mz",
+  "Gabon": "ga",
+  "Benin": "bj",
+  "Jamaica": "jm",
+  "Haiti": "ht",
+  "Moldova": "md",
+  "Nicaragua": "ni",
+  "Guyana": "gy",
+  "Niger": "ne",
+  "Armenia": "am",
+  "Albania": "al",
+  "Burkina Faso": "bf",
+  "Kyrgyzstan": "kg"
+};
 
 const countryGdpData = {
   
@@ -100,7 +224,7 @@ const countryGdpData = {
     "Australia": 1723827000000,
     "Spain": 1580695000000,
     "Mexico": 1788887000000,
-    "Turkey": 1169450748000,
+    "Turkiye": 1169450748000,
     "Indonesia": 1371171000000,
     "Netherlands": 1118125000000,
     "Saudi Arabia": 1067583000000,
@@ -240,10 +364,66 @@ const countryGdpData = {
       "Albania": 22978000000,
       "Burkina Faso": 20325000000,
       "Kyrgyzstan": 13782000000,
-      "Uzbekistan": 90889000000
-    
-    
-
+      "Uzbekistan": 90889000000,
+      "Tuvalu": 62000000,
+      "Nauru": 154000000,
+      "Palau": 263000000,
+      "Kiribati": 279000000,
+      "Marshall Islands": 284000000,
+      "Micronesia (Federated States of)": 460000000,
+      "Tonga": 500000000,
+      "São Tomé and Príncipe": 603000000,
+      "Dominica": 654000000,
+      "Samoa": 934000000,
+      "Saint Vincent and the Grenadines": 1066000000,
+      "Saint Kitts and Nevis": 1077000000,
+      "Vanuatu": 1126000000,
+      "Grenada": 1320000000,
+      "Comoros": 1352000000,
+      "Turks and Caicos Islands": 1402000000,
+      "Sint Maarten": 1623000000,
+      "Solomon Islands": 1631000000,
+      "San Marino": 1855000000,
+      "Guinea-Bissau": 1966000000,
+      "Antigua and Barbuda": 2033000000,
+      "Lesotho": 2046000000,
+      "Seychelles": 2141000000,
+      "Timor-Leste": 2243000000,
+      "Gambia": 2340000000,
+      "Saint Lucia": 2520000000,
+      "Central African Republic": 2555000000,
+      "Cape Verde": 2587000000,
+      "Burundi": 2642000000,
+      "Bhutan": 2898000000,
+      "Curaçao": 3074000000,
+      "Greenland": 2926000000,
+      "Belize": 3282000000,
+      "Aruba": 3545000000,
+      "Andorra": 3728000000,
+      "Suriname": 3782000000,
+      "Sierra Leone": 3810000000,
+      "Djibouti": 4099000000,
+      "Liberia": 4332000000,
+      "Eswatini": 4598000000,
+      "Fiji": 5495000000,
+      "French Polynesia": 5815000000,
+      "Barbados": 6394000000,
+      "Maldives": 6600000000,
+      "Cayman Islands": 6601000000,
+      "Liechtenstein": 7365000000,
+      "Montenegro": 7405000000,
+      "Bermuda": 7828000000,
+      "Monaco": 8784000000,
+      "Syria": 8980000000,
+      "Togo": 9171000000,
+      "New Caledonia": 9623000000,
+      "Kosovo": 10438000000,
+      "Mauritania": 10453000000,
+      "Somalia": 11680000000,
+      "Tajikistan": 12061000000,
+      "Equatorial Guinea": 12117000000,
+      "Namibia": 12351000000,
+      "Chad": 13149000000
 };
 
 // Veri yapıları
@@ -353,11 +533,13 @@ function updateComparisonSection(totalGdp, cities = []) {
     closestCountryElement.textContent = closestCountry.name;
     closestCountryGdpElement.textContent = closestCountry.gdp.toLocaleString() + " $";
     
+    // Bayrağı göster
+    showCountryFlag(closestCountry.name);
+
     const difference = totalGdp - closestCountry.gdp;
     gdpDifferenceElement.textContent = Math.abs(difference).toLocaleString() + " $";
     gdpDifferenceElement.className = difference >= 0 ? "positive-difference" : "negative-difference";
 
-    // Türkiye GSYİH'sine oranını hesapla ve güncelle
     const percentageOfTurkeyGdp = ((totalGdp / totalTurkeyGdp) * 100).toFixed(2);
     document.getElementById("percentage-of-turkey-gdp").textContent = percentageOfTurkeyGdp;
   } else {
@@ -365,6 +547,9 @@ function updateComparisonSection(totalGdp, cities = []) {
     closestCountryGdpElement.textContent = "-";
     gdpDifferenceElement.textContent = "-";
     document.getElementById("percentage-of-turkey-gdp").textContent = "-";
+    
+    // Bayrağı gizle
+    document.getElementById('country-flag').style.display = 'none';
   }
 }
 
@@ -568,6 +753,25 @@ document.querySelectorAll(".city").forEach(city => {
       }
   });
 });
+
+// Bayrak gösterme fonksiyonu
+function showCountryFlag(countryName) {
+  const flagElement = document.getElementById('country-flag');
+  const countryCode = countryCodes[countryName]?.toLowerCase();
+  
+  if (countryCode) {
+    // SVG versiyonunu kullanıyoruz
+    flagElement.src = `https://flagcdn.com/${countryCode}.svg`;
+    flagElement.alt = `${countryName} flag`;
+    flagElement.style.display = 'inline-block';
+    
+    // SVG'nin dalgalanma efektini engellemek için
+    flagElement.style.transform = 'none';
+    flagElement.style.animation = 'none';
+  } else {
+    flagElement.style.display = 'none';
+  }
+}
 
 // Sayfa yüklendiğinde
 window.addEventListener("load", () => {

@@ -7,24 +7,24 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <!-- Tooltip, harita üzerindeki şehir hakkında bilgi gösterecek -->
+  <!-- Tooltip to show information about cities on the map -->
   <div id="tooltip" class="tooltip">City</div>
   
-  <!-- Harita Konteyneri -->
+  <!-- Map Container -->
   <div id="map-container">
-      <!-- Tooltip for displaying city information -->
+      <!-- Tooltip for displaying city information during selection -->
       <div id="selection-tooltip" style="position: absolute; display: none; background: rgba(0, 0, 0, 0.8); color: white; padding: 5px; border-radius: 3px; font-size: 12px; z-index: 1000;"></div>
   
-      <!-- Seçim için canvas -->
+      <!-- Canvas element for selection functionality -->
       <canvas id="selection-canvas" style="position: absolute; top: 0; left: 0; z-index: 10;"></canvas>
 
-    <!-- Türkiye Haritası -->
+    <!-- Turkey Map SVG -->
     <svg id="svg-turkey-map" xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="https://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 800 350">
+      <!-- SVG definitions including map projection -->
       <defs>
         <amcharts:ammap projection="mercator" leftLongitude="25.664066" topLatitude="42.105360" rightLongitude="44.819234" bottomLatitude="35.806126"></amcharts:ammap>
       </defs>
       <g>
-        <!-- Zonguldak Şehri -->
         <path id="TR-67" data-city-name="zonguldak" title="Zonguldak" class="city" d="M267.39,28.08L267.96,29.47L269.8,31.98L272.62,32.42L272.6,35.3L272.96,36.11L274.5,37.53L274.04,38.67L274.5,39.9L272.94,43.21L272.94,43.21L271.63,44.01L270.91,45L270.5,45.83L270.05,49.31L269.21,50.8L269.33,52.28L270.92,55.58L270.92,55.58L267.13,56.31L262.98,57.76L258.98,58.28L255.34,59.59L254.02,59.48L252.1,58.06L247.12,58.45L244.46,58.1L241.61,58.88L239.75,59.9L239.75,59.9L237.51,60.59L234.99,60.09L234.3,58.99L234.3,55.96L233.31,54.23L233.31,54.23L234.7,53.28L234.86,52.43L236.46,51.02L236.52,50.43L237.46,49.31L237.33,47.53L238.01,45.76L237.57,45.11L237.02,45.1L236.84,44.81L237.1,43.56L237.96,43.56L238.43,43L239.44,42.8L241.35,41.44L243.75,40.52L245.94,40.08L251.62,36.66L251.97,35.96L254.69,34.54L256.54,32.94L262.14,30.7L263.96,28.99z"/>
         <path id="TR-01" data-city-name="adana" title="Adana" class="city" d="M445.07,206.98l-1,1.29l-1.19,5.33l-0.91,2.23l-0.88,1.49l-1.5,1.21l-0.55,0.81l0.2,0.53l2.09,0.32l0.95,0.81l-0.24,1l-1.76,1.56l-0.8,1.41l0.26,1.03l1.8,2.29l0.43,2.09l-0.18,1.5l-0.98,2.1l-2.89,2.9l0,0l-1.31,0.3l-4.18,2.51l-2.15,3.22l-1.29,4.13l-0.47,4.38l0.44,3.09l1.52,4.45l0.38,3.03l-1.24,9.1l0,0l-1.39,1.2l-0.84,1.44l-0.18,1.19l0.43,1.39l0,0l-2.15,2.17l-1.38,0.85l-1.01,1.84l-1.87,1.45l-0.3,0.75l-2.27,1.53l-1.47,-0.19l-1.72,0.58l-0.59,-0.45l-1.21,0.01l-1.64,1.05l-0.84,1.74l0.91,-0.42l-0.22,0.47l0.23,0.71l0.52,-1.15l0,-0.31l-0.48,-0.03l0.23,-0.38l0.78,-0.18l0.03,0.51l0.25,0.14l-0.16,0.87l1.81,-0.22l0.2,-0.21l-0.42,-0.16v-0.37l1.08,0.75l-3.2,2.23l-0.46,0.78l-0.31,2.37l-0.69,0.64l-1.37,0.56l-0.48,0.77l-0.42,0.14l-0.5,-0.44l-1.84,-0.49l-2.79,-0.34l-1.03,0.32v0.63l-2.8,1.72l-0.22,-0.62l-1.08,-0.7l-12.54,-7.43l-1.87,-0.65l-2.25,0.03l0,0l1,-0.91l0,0l-0.02,-0.25l0.27,0.21l0,0l0.41,-0.32l0.13,0.32l0.35,-0.1l0.16,-0.96l0.2,0.42l0.81,-0.44l0.49,0.03l0.53,0.47l-0.28,-0.69l0.19,-0.13l0.8,0.57l0.02,-1.1l0.31,0.02l0.38,0.66l1.29,-1.71l0.82,0.75l1.27,-0.45l0.29,0.06l0.17,0.51l0.29,-0.13l-0.21,-0.27l0.79,-0.46l0.23,-0.82l-0.67,-3.38l-0.01,-3.39l-0.88,-3.1l0.1,-2.1l-0.57,-0.79l-0.6,-0.57l-2.41,-1.2l-1.69,-0.01l-0.29,-1.3l-0.63,-1.02l-0.99,-0.63l-0.86,-0.14l-0.34,-0.5l0.02,-1.54l0.53,-0.84l1.49,-1.05l-0.08,-1.23l-1.15,-1.89l-1.6,-1.36l0.2,-0.51l-1.31,-0.29l-2.23,-3.07l0.14,-2.21l-0.84,-1.45l0,0l0.05,-0.49l2.58,-1.6l-0.76,-1.45l1,-1.36l0.77,-3.56l0.04,-2.24l0.75,-1.26l1.5,-0.35l2.29,1.04l1.27,-0.08l0.83,-0.71l2.45,-4.29l1.31,-1.13l3.23,-1.58l0,0l4.93,1.27l0.51,0.63l1.32,-0.34l0.48,0.27l0.43,1.17l0.36,0.24l1.1,-0.25l4.33,0.72l1.71,-0.04l1.23,-2.07l-0.22,-1.66l0.67,-2.1l0.84,-5.59l0.67,-0.42l1.5,-0.26l1.1,-0.74l0.89,-0.85l1.19,-1.89l1.13,-0.44l1.15,-1.51l5.24,-1.63l1.34,-0.85l1.37,-2.25l1.15,-4.28l2,-1.95l1.65,-3.03l3.83,-1.42l1.29,-0.08l2.7,2.06l1.68,2.64L445.07,206.98z"/>
         <path id="TR-02" data-city-name="adiyaman" title="Adıyaman" class="city" d="M557.34,211.25L558.12,211.39L559.49,210.17L560.65,210.16L561.08,210.93L562.03,211.67L562.28,213.06L562.11,213.75L561.21,214.69L560.51,217.44L559.72,217.75L559.49,218.42L558.17,219.93L558.17,219.93L557.54,220.17L556.48,219.99L555.13,220.54L554.89,221.03L553.85,221.67L553.58,223.26L552.53,225.31L551.43,225.49L550.31,226.26L551.07,226.96L550.92,227.76L550.33,228.34L550.5,230.03L548.37,230L547.44,230.61L547.13,231.21L547.28,231.63L548.95,231.03L549.63,231.16L549.68,233.75L547.98,234.29L547.7,234.7L547.76,235.72L546.51,236.56L545.12,237.06L544.23,236.76L543.84,237.09L544,238.23L544.82,238.43L545.38,238.88L545.26,239.12L541.28,240.32L536.98,240.81L533.57,243.51L530.27,246.67L528.2,247.75L523.38,247.96L522.71,248.47L521.34,248.27L520.25,249.99L518.98,249.5L518.28,249.65L517.9,250.44L517.94,251.32L517.42,251.74L517.13,251.72L517.04,251.17L515.94,251.22L513.61,249.68L513.61,249.68L511.88,248.58L507.98,247.29L504.17,246.94L501.32,247.31L500.39,247.03L498.7,245.18L496.71,245.45L494.37,246.53L493.67,246.44L492.58,245.69L492.58,245.69L491.49,243.73L491.16,242.02L489.67,242.06L488.33,241.56L487.24,241.6L487.12,240.53L486.56,239.64L487.35,238.92L487.32,238.36L487.9,237.67L487.73,236.19L488.17,234.54L489.03,233.33L490.73,231.87L490.98,228.52L490.58,227.29L491.65,226.46L493.19,225.99L493.86,225.42L495.32,222.79L495.32,222.79L496.01,223.22L496.18,223.72L495.74,225.54L498.9,224.82L499.27,225.19L499.51,226.82L499.94,227.31L500.59,227.36L501.44,226.33L501.98,226.18L504.02,226.81L506.37,227.12L508.78,226.43L511.05,226.22L512.5,224.19L514.49,223.73L515.06,222.49L514.3,220.37L514.35,219.18L513,217.35L513.39,216.26L515.7,215L520.59,213.52L521.5,212.6L522.23,211.24L523.65,210.7L527.74,210.43L528.89,211.26L531.06,212.12L532.28,213.08L533.63,213.31L534.34,214.44L536.39,214.83L537.9,216.54L539.47,216.83L541.69,219.08L543.31,219.58L547.87,217.81L549.17,216.92L551.77,216.19L552.22,214.81L554.89,213.46z"/>
@@ -107,35 +107,54 @@
         <path id="TR-77" data-city-name="yalova" title="Yalova" class="city" d="M155.46,77.77L156.68,77.44L156.68,77.44L156.44,79.52L156.8,83.3L156.54,84.16L155.8,84.51L156.01,84.99L156.01,84.99L154.34,85.19L153.24,84.86L151.17,84.9L148.08,86.25L146.24,86.66L142.94,85.94L140.09,85.88L137.39,84.83L137.39,88.48L136.76,90.27L136.76,90.27L133.75,89.48L131.9,87.72L128.85,87.05L128.83,86.07L129.38,85.22L130.32,84.52L133.25,83.61L135.1,82.53L135.91,81.84L136.53,80.74L137.58,80.2L140.09,79.97L142.42,80.22L143.61,79.91L143.87,79.27L144.75,79.6L149.26,79.41L152.12,78.6L153.58,77.09L154.23,77.07z"/>
         <path id="TR-66" data-city-name="yozgat" title="Yozgat" class="city" d="M405.06,100.49L405.07,102.29L405.52,103.63L407.23,104.72L408.26,105.9L407.91,108.23L408.4,109.01L412.92,109.6L414.42,110.62L416.41,110.5L418.82,109.67L422.1,110.04L425.44,109.65L426.44,109.95L427.16,111.82L427.23,116.27L427.88,117.43L428.77,117.75L428.77,117.75L428.53,119.9L428.96,120.91L429.78,121.6L432.01,121.98L432.42,122.28L431.85,124.9L431.8,126.9L433.34,129.33L434.87,130.39L435.3,131.07L435.41,133.59L436.13,135.93L436.07,136.56L435.68,137.34L431.78,140.94L429.81,141.28L427.3,140.1L424.1,141.35L423.38,142.75L423.31,148.09L420.25,151.67L419.76,153.07L419.76,153.07L417.65,156.13L415.59,157.19L412.93,157.86L406.61,158.04L405.31,158.57L404.36,159.45L404.22,160.24L405.68,163.23L405.63,163.92L404.21,164.85L402.37,166.77L399.86,168.09L397.79,168.43L394.57,170.15L393.75,169.57L393.84,166.83L393.47,166.06L392.28,166.04L389.32,167.73L389.32,167.73L388.93,166.26L387.38,164.21L387.45,160.82L386.57,157.99L385.78,157.16L386.49,155.07L386.18,153.35L385.78,152.7L383.76,150.54L382.01,149.65L379.25,149.01L376.65,148.82L373.46,147.39L372.98,146.87L372.88,145.74L372.88,145.74L372.68,144.54L371.29,142.92L370.43,142.31L367.66,141.38L367.05,140.72L367.01,140.02L369.32,137.92L369.33,137.59L368.6,137.55L368.63,136.9L363.6,135.99L362.79,133.56L361.92,132.75L359.62,131.59L357.54,131.02L354.51,128.93L354.07,128.29L353.55,125.96L352.84,125.12L351.98,124.95L351.58,125.37L350.35,125.38L349.86,125.12L349.86,125.12L350.13,123.57L349.44,122.27L349.15,120.63L347.63,119.55L347.48,118.52L348.45,117.74L350.88,117.2L350.88,117.2L350.78,118.4L351.28,119L354.87,117.92L358.54,118.63L359.84,118.54L360.75,118.01L360.71,116.91L360.98,116.65L363.35,114.59L364.83,113.91L366.54,114.31L368.27,116.09L370.92,116.67L373.67,115.46L378.89,115.16L379.79,114.31L381.3,111.95L382.49,111.34L383.34,111.88L383.39,113.88L383.65,114.21L387.93,114.12L390.58,113.34L394.29,113.42L394.96,112.77L395.18,111.96L393.49,109.79L393.16,108.42L393.62,107.61L394.96,107.12L395.22,106.66L395.01,106.12L393.07,104.15L393.05,103.17L393.66,102.72L394.23,102.76L395.69,104.4L396.66,104.65L398.8,102.05L400.13,101.36L402.34,100.98L402.34,100.98L403.51,101.01z"/>
         
+        
       </g>
     </svg>
   </div>
 
-<!-- comparison-section div'ini güncelleyelim -->
+<!-- Comparison section showing selected data -->
 <div id="comparison-section">
-  <h3>Seçim Bilgileri</h3>
+  <h3>Selection Information</h3>
   <div id="selection-info">
-    <p><strong>Seçilen Şehirler:</strong> <span id="selected-cities">-</span></p>
-    <p><strong>Toplam GSYİH:</strong> <span id="total-gdp">0</span> $</p>
-    <p><strong>Ortalama GSYİH:</strong> <span id="average-gdp">0</span> $</p>
-    <p><strong>Şehir Sayısı:</strong> <span id="city-count">0</span></p>
+    <!-- Selected cities list -->
+    <p><strong>Selected Cities:</strong> <span id="selected-cities">-</span></p>
+    <!-- Total GDP of selected cities -->
+    <p><strong>Total GDP:</strong> <span id="total-gdp">0</span> $</p>
+    <!-- Average GDP of selected cities -->
+    <p><strong>Average GDP:</strong> <span id="average-gdp">0</span> $</p>
+    <!-- Count of selected cities -->
+    <p><strong>City Count:</strong> <span id="city-count">0</span></p>
   </div>
   <div id="country-comparison">
-    <h4>Karşılaştırma</h4>
-    <p><strong>En Yakın Ülke:</strong> <span id="closest-country">-</span></p>
-    <p><strong>Ülke GSYİH:</strong> <span id="closest-country-gdp">-</span> $</p>
-    <p><strong>Fark:</strong> <span id="gdp-difference">-</span> $</p>
-    <p><strong>Seçilen Bölgenin Türkiye GSYİH'sine Oranı:</strong> <span id="percentage-of-turkey-gdp">-</span>%</p>
+    <h4>Comparison</h4>
+    <!-- Closest country by GDP -->
+    <p><strong>Closest Country:</strong> <span id="closest-country">-</span></p>
+    <p>
+      <!-- Country GDP with flag -->
+      <strong>Country GDP:</strong> 
+      <span id="closest-country-gdp">-</span> $
+      <img id="country-flag" src="" alt="Country Flag" style="display: none; width: 20px; height: 15px; margin-left: 10px;" />
+    </p>
+    <!-- GDP difference between selection and closest country -->
+    <p><strong>Difference:</strong> <span id="gdp-difference">-</span> $</p>
+    <!-- Percentage of Turkey's total GDP -->
+    <p><strong>Selected Region's Share of Turkiye's GDP:</strong> <span id="percentage-of-turkey-gdp">-</span>%</p>
   </div>
 </div>
 
+  <!-- Control buttons -->
   <div id="controls">
-    <button id="select-mode" class="active">Seçim Modu</button>
-    <button id="click-mode">Tıklama Modu</button>
-    <button id="toggle-city-names">İsimleri Göster</button>
-    <button id="reset-selection">Seçimi Sıfırla</button>
+    <!-- Selection mode button -->
+    <button id="select-mode" class="active">Selection Mode</button>
+    <!-- Click mode button -->
+    <button id="click-mode">Click Mode</button>
+    <!-- Toggle city names button -->
+    <button id="toggle-city-names">Show Names</button>
+    <!-- Reset selection button -->
+    <button id="reset-selection">Reset Selection</button>
   </div>
 
+  <!-- JavaScript file -->
   <script src="script.js"></script>
 </body>
 </html>
