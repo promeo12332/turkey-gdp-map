@@ -112,49 +112,58 @@
     </svg>
   </div>
 
-<!-- Comparison section showing selected data -->
-<div id="comparison-section">
-  <h3>Selection Information</h3>
-  <div id="selection-info">
-    <!-- Selected cities list -->
-    <p><strong>Selected Cities:</strong> <span id="selected-cities">-</span></p>
-    <!-- Total GDP of selected cities -->
-    <p><strong>Total GDP:</strong> <span id="total-gdp">0</span> $</p>
-    <!-- Average GDP of selected cities -->
-    <p><strong>Average GDP:</strong> <span id="average-gdp">0</span> $</p>
-    <!-- Count of selected cities -->
-    <p><strong>City Count:</strong> <span id="city-count">0</span></p>
+<!-- Comparison container holding all comparison elements -->
+<div id="comparison-container">
+  <!-- Main comparison section -->
+  <div id="comparison-section">
+    <h3>Selection Information</h3>
+    <div id="selection-info">
+      <p><strong>Selected Cities:</strong> <span id="selected-cities">-</span></p>
+      <p><strong>Total GDP:</strong> <span id="total-gdp">0</span> $</p>
+      <p><strong>Average GDP:</strong> <span id="average-gdp">0</span> $</p>
+      <p><strong>City Count:</strong> <span id="city-count">0</span></p>
+      <p><strong>Total Population:</strong> <span id="total-population">0</span></p>
+    </div>
+    
+    <!-- Country comparison subsection -->
+    <div id="country-comparison">
+      <h4>Country Comparison</h4>
+      <p><strong>Closest Country:</strong> 
+        <span id="closest-country">-</span>
+        <img id="country-flag" src="" alt="Country Flag" style="display: none; width: 20px; height: 15px; margin-left: 5px;" />
+      </p>
+      <p><strong>Country GDP:</strong> <span id="closest-country-gdp">-</span> $</p>
+      <p><strong>Difference:</strong> <span id="gdp-difference">-</span> $</p>
+      <p><strong>Share of Turkey's GDP:</strong> <span id="percentage-of-turkey-gdp">-</span>%</p>
+    </div>
   </div>
-  <div id="country-comparison">
-    <h4>Comparison</h4>
-    <!-- Closest country by GDP -->
-    <p><strong>Closest Country:</strong> <span id="closest-country">-</span></p>
-    <p>
-      <!-- Country GDP with flag -->
-      <strong>Country GDP:</strong> 
-      <span id="closest-country-gdp">-</span> $
-      <img id="country-flag" src="" alt="Country Flag" style="display: none; width: 20px; height: 15px; margin-left: 10px;" />
+
+  <!-- Per capita comparison section -->
+  <div id="per-capita-comparison">
+    <h4>GDP Per Capita</h4>
+    <p><strong>GDP Per Capita:</strong> <span id="gdp-per-capita">0</span> $</p>
+    <p><strong>Closest Country:</strong> 
+      <span id="closest-country-per-capita">-</span>
+      <img id="country-flag-per-capita" src="" alt="Country Flag" style="display: none; width: 20px; height: 15px; margin-left: 5px;" />
     </p>
-    <!-- GDP difference between selection and closest country -->
-    <p><strong>Difference:</strong> <span id="gdp-difference">-</span> $</p>
-    <!-- Percentage of Turkey's total GDP -->
-    <p><strong>Selected Region's Share of Turkiye's GDP:</strong> <span id="percentage-of-turkey-gdp">-</span>%</p>
+    <p><strong>Country GDP Per Capita:</strong> <span id="closest-country-per-capita-value">-</span> $</p>
+    <p><strong>Difference:</strong> <span id="gdp-per-capita-difference">-</span>%</p>
+    <p><strong>Highest in Selection:</strong> 
+      <span id="highest-gdp-per-capita-city">-</span> (<span id="highest-gdp-per-capita-value">-</span> $)
+    </p>
+    <p><strong>Compared to Turkey Avg:</strong> <span id="turkey-comparison">-</span>%</p>
   </div>
 </div>
 
-  <!-- Control buttons -->
-  <div id="controls">
-    <!-- Selection mode button -->
-    <button id="select-mode" class="active">Selection Mode</button>
-    <!-- Click mode button -->
-    <button id="click-mode">Click Mode</button>
-    <!-- Toggle city names button -->
-    <button id="toggle-city-names">Show Names</button>
-    <!-- Reset selection button -->
-    <button id="reset-selection">Reset Selection</button>
-  </div>
+<!-- Control buttons section -->
+<div id="controls">
+  <button id="select-mode" class="active">Selection Mode</button>
+  <button id="click-mode">Click Mode</button>
+  <button id="toggle-city-names">Show Names</button>
+  <button id="reset-selection">Reset Selection</button>
+</div>
 
-  <!-- JavaScript file -->
-  <script src="script.js"></script>
+<!-- JavaScript file -->
+<script src="script.js"></script>
 </body>
 </html>

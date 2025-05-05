@@ -426,16 +426,224 @@ const countryGdpData = {
       "Chad": 13149000000
 };
 
+const provincePopulationData = {
+  "adana": 2238980,
+  "adiyaman": 632459,
+  "afyonkarahisar": 736912,
+  "agri": 536199,
+  "aksaray": 423011,
+  "amasya": 337800,
+  "ankara": 5639076,
+  "antalya": 2548308,
+  "ardahan": 99265,
+  "artvin": 169501,
+  "aydin": 1119081,
+  "balikesir": 1241086,
+  "bartin": 198999,
+  "batman": 620278,
+  "bayburt": 78550,
+  "bilecik": 500000,
+  "bingol": 281768,
+  "bitlis": 349396,
+  "bolu": 600000,
+  "burdur": 267092,
+  "bursa": 3056120,
+  "canakkale": 540662,
+  "cankiri": 180945,
+  "corum": 530864,
+  "denizli": 1053732,
+  "diyarbakir": 1773042,
+  "duzce": 395679,
+  "edirne": 412115,
+  "elazig": 591098,
+  "erzincan": 234431,
+  "erzurum": 762321,
+  "eskisehir": 887475,
+  "gaziantep": 2135984,
+  "giresun": 448400,
+  "gumushane": 162748,
+  "hakkari": 278775,
+  "hatay": 1637567,
+  "igdir": 199442,
+  "isparta": 441412,
+  "istanbul": 15636243,
+  "izmir": 4367251,
+  "kahramanmaras": 1161984,
+  "karabuk": 600000,
+  "karaman": 253279,
+  "kars": 284923,
+  "kastamonu": 376945,
+  "kayseri": 1429616,
+  "kilis": 142541,
+  "kirikkale": 278749,
+  "kirklareli": 361737,
+  "kirsehir": 243042,
+  "kocaeli": 3000000,
+  "konya": 2273756,
+  "kutahya": 579257,
+  "malatya": 806156,
+  "manisa": 1467485,
+  "mardin": 854716,
+  "mersin": 1891612,
+  "mugla": 1031143,
+  "mus": 406501,
+  "nevsehir": 303010,
+  "nigde": 362861,
+  "ordu": 760872,
+  "osmaniye": 538759,
+  "rize": 343212,
+  "sakarya": 1031562,
+  "samsun": 1359680,
+  "siirt": 331980,
+  "sinop": 219733,
+  "sivas": 635889,
+  "sanliurfa": 2077215,
+  "sirnak": 537762,
+  "tekirdag": 1099542,
+  "tokat": 597920,
+  "trabzon": 811901,
+  "tunceli": 83443,
+  "usak": 369433,
+  "van": 1229851,
+  "yalova": 291001,
+  "yozgat": 419440,
+  "zonguldak": 591204
+};
+
+const countryGdpPerCapitaData = {
+  "United States": 76245,
+  "China": 12541,
+  "Japan": 33827,
+  "Germany": 53383,
+  "India": 2500,
+  "United Kingdom": 46510,
+  "France": 43518,
+  "Italy": 35657,
+  "Canada": 51987,
+  "South Korea": 34997,
+  "Russia": 13896,
+  "Brazil": 6796,
+  "Australia": 64700,
+  "Spain": 30904,
+  "Mexico": 10495,
+  "Turkiye": 10676,
+  "Indonesia": 4823,
+  "Netherlands": 57767,
+  "Saudi Arabia": 30036,
+  "Poland": 17800,
+  "Switzerland": 91425,
+  "Belgium": 48424,
+  "Argentina": 13687,
+  "Sweden": 51875,
+  "Ireland": 79325,
+  "Israel": 43626,
+  "Singapore": 82807,
+  "United Arab Emirates": 43800,
+  "Thailand": 7278,
+  "Austria": 48436,
+  "Norway": 74882,
+  "Philippines": 3597,
+  "Vietnam": 4110,
+  "Bangladesh": 2591,
+  "Denmark": 61015,
+  "Malaysia": 11972,
+  "Colombia": 6426,
+  "Hong Kong": 49700,
+  "South Africa": 6374,
+  "Romania": 14258,
+  "Czech Republic": 27566,
+  "Egypt": 3854,
+  "Chile": 16469,
+  "Iran": 4780,
+  "Pakistan": 1541,
+  "Portugal": 23186,
+  "Finland": 48585,
+  "Peru": 6699,
+  "Kazakhstan": 10158,
+  "Algeria": 4243,
+  "Greece": 17891,
+  "Iraq": 5971,
+  "New Zealand": 42084,
+  "Hungary": 17831,
+  "Qatar": 62210,
+  "Ukraine": 4532,
+  "Nigeria": 2230,
+  "Morocco": 3651,
+  "Kuwait": 33039,
+  "Slovakia": 21383,
+  "Uzbekistan": 2230,
+  "Kenya": 2081,
+  "Dominican Republic": 8910,
+  "Ecuador": 6350,
+  "Guatemala": 4660,
+  "Ethiopia": 1028,
+  "Sudan": 2450,
+  "Oman": 17973,
+  "Puerto Rico": 32700,
+  "Bulgaria": 12327,
+  "Angola": 3030,
+  "Costa Rica": 12570,
+  "Luxembourg": 112875,
+  "Sri Lanka": 3850,
+  "Croatia": 17405,
+  "Panama": 15830,
+  "Lithuania": 23003,
+  "Ghana": 2202,
+  "Tanzania": 1132,
+  "Uruguay": 17278,
+  "Ivory Coast": 2270,
+  "Azerbaijan": 4800,
+  "Belarus": 6660,
+  "Serbia": 9230,
+  "Slovenia": 28675,
+  "DR Congo": 584,
+  "Myanmar": 1400,
+  "Uganda": 915,
+  "Jordan": 4250,
+  "Libya": 7800,
+  "Cameroon": 1520,
+  "Tunisia": 3490,
+  "Bahrein": 24000,
+  "Nepal": 1190,
+  "Cyprus": 28900,
+  "Estonia": 27390,
+  "Latvia": 19820,
+  "Paraguay": 5400,
+  "Honduras": 2540,
+  "El Salvador": 4050,
+  "Georgia": 4700,
+  "Senegal": 1600,
+  "Iceland": 66950,
+  "Papua New Guinea": 2860,
+  "Zimbabwe": 1460,
+  "Bosnia and Herzegovina": 6140,
+  "Trinidad and Tobago": 16940,
+  "Zambia": 1300,
+  "Malta": 30700,
+  "Mali": 900,
+  "Mozambique": 500,
+  "Gabon": 7480,
+  "Benin": 1210,
+  "Jamaica": 5350,
+  "Haiti": 1250,
+  "Moldova": 4570,
+  "Nicaragua": 2100,
+  "Guyana": 4890,
+  "Niger": 540,
+  "Armenia": 4600,
+  "Albania": 5280,
+  "Burkina Faso": 840,
+  "Kyrgyzstan": 1280
+};
+
 // Veri yapıları
 
 
-// Türkiye toplam GSYİH
 const turkeyTotalGdp = Object.values(gdpData).reduce((sum, gdp) => sum + gdp, 0);
+const turkeyTotalPopulation = Object.values(provincePopulationData).reduce((sum, pop) => sum + pop, 0);
+const turkeyGdpPerCapita = turkeyTotalGdp / turkeyTotalPopulation;
 
-// Türkiye'nin toplam GSYİH'si
-const totalTurkeyGdp = Object.values(gdpData).reduce((sum, gdp) => sum + gdp, 0);
-
-// DOM elementleri
+// DOM elements
 const tooltip = document.getElementById("tooltip");
 const selectionCanvas = document.getElementById("selection-canvas");
 const mapContainer = document.getElementById("map-container");
@@ -447,172 +655,353 @@ const selectedCitiesElement = document.getElementById("selected-cities");
 const averageGdpElement = document.getElementById("average-gdp");
 const cityCountElement = document.getElementById("city-count");
 const gdpDifferenceElement = document.getElementById("gdp-difference");
-const selectionTooltip = document.getElementById("selection-tooltip");
+const totalPopulationElement = document.getElementById("total-population");
+const percentageOfTurkeyGdpElement = document.getElementById("percentage-of-turkey-gdp");
+const countryFlagElement = document.getElementById("country-flag");
 
-// Durum değişkenleri
+// GDP Per Capita elements
+const gdpPerCapitaElement = document.getElementById("gdp-per-capita");
+const closestCountryPerCapitaElement = document.getElementById("closest-country-per-capita");
+const closestCountryPerCapitaValueElement = document.getElementById("closest-country-per-capita-value");
+const gdpPerCapitaDifferenceElement = document.getElementById("gdp-per-capita-difference");
+const highestGdpPerCapitaCityElement = document.getElementById("highest-gdp-per-capita-city");
+const highestGdpPerCapitaValueElement = document.getElementById("highest-gdp-per-capita-value");
+const turkeyComparisonElement = document.getElementById("turkey-comparison");
+const countryFlagPerCapitaElement = document.getElementById("country-flag-per-capita");
+
+// State variables
 let isSelecting = false;
-let isClicking = false;
 let selectionPath = [];
 let selectedCities = [];
-let startClickTime = 0;
-let selectionTimeout;
 let mode = "select";
 let showingCityNames = false;
 
-// Boyutlandırma
+// Resize canvas to fit container
 function resizeCanvas() {
   selectionCanvas.width = mapContainer.offsetWidth;
   selectionCanvas.height = mapContainer.offsetHeight;
 }
 
-// Yüzde hesaplama
-function calculatePercentage(selectedGdp) {
-  return ((selectedGdp / turkeyTotalGdp) * 100).toFixed(2);
-}
-
-// Yüzde bilgisi güncelleme
-function updatePercentageInfo(selectedGdp) {
-  const percentage = calculatePercentage(selectedGdp);
-  document.getElementById("selected-percentage").textContent = percentage;
-  document.getElementById("turkey-total").textContent = (100 - parseFloat(percentage)).toFixed(2);
-}
-
-// Nokta çokgen içinde mi kontrolü
+// Check if point is inside polygon
 function isPointInPolygon(point, polygon) {
   let isInside = false;
   for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-      const xi = polygon[i].x, yi = polygon[i].y;
-      const xj = polygon[j].x, yj = polygon[j].y;
+    const xi = polygon[i].x, yi = polygon[i].y;
+    const xj = polygon[j].x, yj = polygon[j].y;
 
-      const intersect = ((yi > point.y) !== (yj > point.y)) &&
-          (point.x < (xj - xi) * (point.y - yi) / (yj - yi) + xi);
-      if (intersect) isInside = !isInside;
+    const intersect = ((yi > point.y) !== (yj > point.y)) &&
+      (point.x < (xj - xi) * (point.y - yi) / (yj - yi) + xi);
+    if (intersect) isInside = !isInside;
   }
   return isInside;
 }
 
-// Ülke karşılaştırma
+// Find closest country by total GDP
 function findClosestCountry(totalGdp) {
   let closestCountry = null;
   let smallestDifference = Infinity;
 
   for (const [country, gdp] of Object.entries(countryGdpData)) {
-      const difference = Math.abs(gdp - totalGdp);
-      if (difference < smallestDifference) {
-          smallestDifference = difference;
-          closestCountry = { name: country, gdp: gdp };
-      }
+    const difference = Math.abs(gdp - totalGdp);
+    if (difference < smallestDifference) {
+      smallestDifference = difference;
+      closestCountry = { name: country, gdp: gdp };
+    }
   }
   return closestCountry;
 }
 
-// Seçimi sıfırlama
+// Find closest country by GDP per capita
+function findClosestCountryByPerCapita(gdpPerCapita) {
+  let closestCountry = null;
+  let smallestDifference = Infinity;
+
+  for (const [country, perCapita] of Object.entries(countryGdpPerCapitaData)) {
+    const difference = Math.abs(perCapita - gdpPerCapita);
+    if (difference < smallestDifference) {
+      smallestDifference = difference;
+      closestCountry = { name: country, perCapita: perCapita };
+    }
+  }
+  return closestCountry;
+}
+
+// Find city with highest GDP per capita
+function findHighestGdpPerCapitaCity(cities) {
+  let highestCity = null;
+  let highestValue = 0;
+
+  cities.forEach(cityName => {
+    const gdp = gdpData[cityName];
+    const population = provincePopulationData[cityName];
+    if (gdp && population) {
+      const perCapita = gdp / population;
+      if (perCapita > highestValue) {
+        highestValue = perCapita;
+        highestCity = cityName;
+      }
+    }
+  });
+
+  return highestCity ? { 
+    name: highestCity, 
+    value: highestValue 
+  } : null;
+}
+
+// Reset selection
 function resetSelection() {
   ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
   document.querySelectorAll(".city").forEach(city => {
-      city.style.fill = "";
-      city.classList.remove("selected");
+    city.style.fill = "";
+    city.classList.remove("selected");
   });
-  tooltip.style.opacity = "0";
+  if (tooltip) tooltip.style.opacity = "0";
   selectedCities = [];
   updateComparisonSection(0, []);
 }
 
-// Karşılaştırma panelini güncelleme
-function updateComparisonSection(totalGdp, cities = []) {
-  totalGdpElement.textContent = totalGdp.toLocaleString();
-  const cityNames = cities.map(c => c.charAt(0).toUpperCase() + c.slice(1));
-  selectedCitiesElement.textContent = cityNames.join(", ") || "-";
-  cityCountElement.textContent = cities.length;
+// Show country flag
+function showCountryFlag(countryName, elementId = 'country-flag') {
+  const flagElement = document.getElementById(elementId);
+  const countryCode = countryCodes[countryName]?.toLowerCase();
   
-  const averageGdp = cities.length > 0 ? Math.round(totalGdp / cities.length) : 0;
-  averageGdpElement.textContent = averageGdp.toLocaleString();
-
-  if (totalGdp > 0) {
-    const closestCountry = findClosestCountry(totalGdp);
-    closestCountryElement.textContent = closestCountry.name;
-    closestCountryGdpElement.textContent = closestCountry.gdp.toLocaleString() + " $";
-    
-    // Bayrağı göster
-    showCountryFlag(closestCountry.name);
-
-    const difference = totalGdp - closestCountry.gdp;
-    gdpDifferenceElement.textContent = Math.abs(difference).toLocaleString() + " $";
-    gdpDifferenceElement.className = difference >= 0 ? "positive-difference" : "negative-difference";
-
-    const percentageOfTurkeyGdp = ((totalGdp / totalTurkeyGdp) * 100).toFixed(2);
-    document.getElementById("percentage-of-turkey-gdp").textContent = percentageOfTurkeyGdp;
-  } else {
-    closestCountryElement.textContent = "-";
-    closestCountryGdpElement.textContent = "-";
-    gdpDifferenceElement.textContent = "-";
-    document.getElementById("percentage-of-turkey-gdp").textContent = "-";
-    
-    // Bayrağı gizle
-    document.getElementById('country-flag').style.display = 'none';
+  if (countryCode && flagElement) {
+    flagElement.src = `https://flagcdn.com/${countryCode}.svg`;
+    flagElement.alt = `${countryName} flag`;
+    flagElement.style.display = 'inline-block';
+  } else if (flagElement) {
+    flagElement.style.display = 'none';
   }
 }
 
-// Şehir tıklama işlemi
+// Format numbers
+function formatNumber(num, decimals = 1) {
+  return new Intl.NumberFormat('tr-TR', {
+    minimumFractionDigits: decimals,
+    maximumFractionDigits: decimals
+  }).format(num);
+}
+
+// Update comparison section
+function updateComparisonSection(totalGdp, cities = []) {
+  // Basic info
+  if (totalGdpElement) totalGdpElement.textContent = formatNumber(totalGdp, 0);
+  
+  const cityNames = cities.map(c => c.charAt(0).toUpperCase() + c.slice(1));
+  if (selectedCitiesElement) selectedCitiesElement.textContent = cityNames.join(", ") || "-";
+  if (cityCountElement) cityCountElement.textContent = cities.length;
+
+  // Average GDP
+  const averageGdp = cities.length > 0 ? Math.round(totalGdp / cities.length) : 0;
+  if (averageGdpElement) averageGdpElement.textContent = formatNumber(averageGdp, 0);
+
+  // Total population and GDP per capita
+  const totalPopulation = cities.reduce((sum, city) => sum + (provincePopulationData[city] || 0), 0);
+  if (totalPopulationElement) totalPopulationElement.textContent = formatNumber(totalPopulation, 0);
+  const gdpPerCapita = totalPopulation > 0 ? totalGdp / totalPopulation : 0;
+
+  if (totalGdp > 0) {
+    // 1. Total GDP comparison
+    const closestCountry = findClosestCountry(totalGdp);
+    if (closestCountryElement) closestCountryElement.textContent = closestCountry.name;
+    if (closestCountryGdpElement) closestCountryGdpElement.textContent = formatNumber(closestCountry.gdp, 0);
+    showCountryFlag(closestCountry.name);
+
+    const difference = totalGdp - closestCountry.gdp;
+    if (gdpDifferenceElement) {
+      gdpDifferenceElement.textContent = formatNumber(Math.abs(difference), 0);
+      gdpDifferenceElement.className = difference >= 0 ? "positive-difference" : "negative-difference";
+    }
+
+    const percentageOfTurkeyGdp = ((totalGdp / turkeyTotalGdp) * 100).toFixed(2);
+    if (percentageOfTurkeyGdpElement) percentageOfTurkeyGdpElement.textContent = percentageOfTurkeyGdp;
+
+    // 2. GDP per capita comparison
+    if (gdpPerCapitaElement) gdpPerCapitaElement.textContent = formatNumber(gdpPerCapita);
+    
+    const closestCountryPerCapita = findClosestCountryByPerCapita(gdpPerCapita);
+    if (closestCountryPerCapitaElement) closestCountryPerCapitaElement.textContent = closestCountryPerCapita.name;
+    if (closestCountryPerCapitaValueElement) {
+      closestCountryPerCapitaValueElement.textContent = formatNumber(closestCountryPerCapita.perCapita);
+    }
+    showCountryFlag(closestCountryPerCapita.name, 'country-flag-per-capita');
+
+    const perCapitaDifference = ((gdpPerCapita - closestCountryPerCapita.perCapita) / closestCountryPerCapita.perCapita * 100).toFixed(2);
+    if (gdpPerCapitaDifferenceElement) {
+      gdpPerCapitaDifferenceElement.textContent = Math.abs(perCapitaDifference);
+      gdpPerCapitaDifferenceElement.className = perCapitaDifference >= 0 ? "positive-difference" : "negative-difference";
+    }
+
+    // 3. Highest GDP per capita city
+    const highestPerCapitaCity = findHighestGdpPerCapitaCity(cities);
+    if (highestPerCapitaCity) {
+      if (highestGdpPerCapitaCityElement) {
+        highestGdpPerCapitaCityElement.textContent = highestPerCapitaCity.name.charAt(0).toUpperCase() + highestPerCapitaCity.name.slice(1);
+      }
+      if (highestGdpPerCapitaValueElement) {
+        highestGdpPerCapitaValueElement.textContent = formatNumber(highestPerCapitaCity.value);
+      }
+    } else {
+      if (highestGdpPerCapitaCityElement) highestGdpPerCapitaCityElement.textContent = "-";
+      if (highestGdpPerCapitaValueElement) highestGdpPerCapitaValueElement.textContent = "-";
+    }
+
+    // 4. Comparison with Turkey average
+    const turkeyComparison = ((gdpPerCapita - turkeyGdpPerCapita) / turkeyGdpPerCapita * 100).toFixed(2);
+    if (turkeyComparisonElement) {
+      turkeyComparisonElement.textContent = Math.abs(turkeyComparison);
+      turkeyComparisonElement.className = turkeyComparison >= 0 ? "positive-difference" : "negative-difference";
+    }
+  } else {
+    // Reset state
+    if (closestCountryElement) closestCountryElement.textContent = "-";
+    if (closestCountryGdpElement) closestCountryGdpElement.textContent = "-";
+    if (gdpDifferenceElement) gdpDifferenceElement.textContent = "-";
+    if (percentageOfTurkeyGdpElement) percentageOfTurkeyGdpElement.textContent = "-";
+    if (countryFlagElement) countryFlagElement.style.display = 'none';
+
+    if (gdpPerCapitaElement) gdpPerCapitaElement.textContent = "0";
+    if (closestCountryPerCapitaElement) closestCountryPerCapitaElement.textContent = "-";
+    if (closestCountryPerCapitaValueElement) closestCountryPerCapitaValueElement.textContent = "-";
+    if (gdpPerCapitaDifferenceElement) gdpPerCapitaDifferenceElement.textContent = "-";
+    if (countryFlagPerCapitaElement) countryFlagPerCapitaElement.style.display = 'none';
+    if (highestGdpPerCapitaCityElement) highestGdpPerCapitaCityElement.textContent = "-";
+    if (highestGdpPerCapitaValueElement) highestGdpPerCapitaValueElement.textContent = "-";
+    if (turkeyComparisonElement) turkeyComparisonElement.textContent = "-";
+    if (totalPopulationElement) totalPopulationElement.textContent = "0";
+  }
+}
+
+// Mouse selection functions
+function handleMouseDown(e) {
+  const rect = selectionCanvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  isSelecting = true;
+  selectionPath = [{ x, y }];
+  ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
+}
+
+function handleMouseMove(e) {
+  if (!isSelecting) return;
+  
+  const rect = selectionCanvas.getBoundingClientRect();
+  const x = e.clientX - rect.left;
+  const y = e.clientY - rect.top;
+
+  selectionPath.push({ x, y });
+  ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
+  
+  ctx.beginPath();
+  ctx.moveTo(selectionPath[0].x, selectionPath[0].y);
+  selectionPath.forEach(point => ctx.lineTo(point.x, point.y));
+  ctx.closePath();
+  
+  ctx.strokeStyle = "rgba(0, 0, 255, 0.7)";
+  ctx.lineWidth = 2;
+  ctx.setLineDash([5, 5]);
+  ctx.stroke();
+}
+
+function handleMouseUp(e) {
+  if (!isSelecting) return;
+  isSelecting = false;
+  
+  const rect = selectionCanvas.getBoundingClientRect();
+  let totalGdp = 0;
+  const selected = [];
+
+  document.querySelectorAll(".city").forEach(city => {
+    const cityRect = city.getBoundingClientRect();
+    const cityCenter = {
+      x: cityRect.left + cityRect.width / 2 - rect.left,
+      y: cityRect.top + cityRect.height / 2 - rect.top
+    };
+
+    const isInside = isPointInPolygon(cityCenter, selectionPath);
+    if (isInside) {
+      const cityName = city.getAttribute("data-city-name").toLowerCase();
+      const gdp = gdpData[cityName];
+      if (gdp) {
+        totalGdp += gdp;
+        city.style.fill = "rgba(255, 0, 0, 0.5)";
+        city.classList.add("selected");
+        selected.push(cityName);
+      }
+    }
+  });
+
+  selectedCities = selected;
+  updateComparisonSection(totalGdp, selectedCities);
+}
+
+// City click handler
 function handleCityClick(event) {
   const rect = selectionCanvas.getBoundingClientRect();
   const clickX = event.clientX - rect.left;
   const clickY = event.clientY - rect.top;
-
+  
   let clickedCity = null;
   document.querySelectorAll(".city").forEach(city => {
-      const cityRect = city.getBoundingClientRect();
-      if (
-          clickX >= cityRect.left - rect.left &&
-          clickX <= cityRect.right - rect.left &&
-          clickY >= cityRect.top - rect.top &&
-          clickY <= cityRect.bottom - rect.top
-      ) {
-          clickedCity = city;
-      }
+    const cityRect = city.getBoundingClientRect();
+    const cityCenterX = cityRect.left + cityRect.width/2 - rect.left;
+    const cityCenterY = cityRect.top + cityRect.height/2 - rect.top;
+    
+    const distance = Math.sqrt(
+      Math.pow(clickX - cityCenterX, 2) + 
+      Math.pow(clickY - cityCenterY, 2)
+    );
+    
+    if (distance <= cityRect.width/2) {
+      clickedCity = city;
+    }
   });
 
   if (clickedCity) {
-      document.querySelectorAll(".city").forEach(c => {
-          c.style.fill = "";
-          c.classList.remove("selected");
-      });
+    document.querySelectorAll(".city").forEach(c => {
+      c.style.fill = "";
+      c.classList.remove("selected");
+    });
 
-      const cityName = clickedCity.getAttribute("data-city-name").toLowerCase();
-      const gdp = gdpData[cityName];
-      
-      clickedCity.style.fill = "rgba(255, 0, 0, 0.7)";
-      clickedCity.classList.add("selected");
-      selectedCities = [cityName];
-      updateComparisonSection(gdp, selectedCities);
+    const cityName = clickedCity.getAttribute("data-city-name").toLowerCase();
+    const gdp = gdpData[cityName];
+    
+    clickedCity.style.fill = "rgba(255, 0, 0, 0.7)";
+    clickedCity.classList.add("selected");
+    selectedCities = [cityName];
+    updateComparisonSection(gdp, selectedCities);
 
+    if (tooltip) {
       tooltip.innerHTML = `
-          <strong>${cityName.charAt(0).toUpperCase() + cityName.slice(1)}</strong><br>
-          Toplam GSYİH: ${gdp.toLocaleString()} $
+        <strong>${cityName.charAt(0).toUpperCase() + cityName.slice(1)}</strong><br>
+        Toplam GSYİH: ${formatNumber(gdp, 0)}
       `;
       tooltip.style.opacity = "1";
       setTimeout(() => tooltip.style.opacity = "0", 3000);
+    }
   }
 }
 
-// Şehir etiketlerini ekleme/kaldırma
+// Add/remove city labels
 function addCityLabels() {
   const svgMap = document.getElementById("svg-turkey-map");
   const cities = document.querySelectorAll(".city");
 
   cities.forEach(city => {
-      const cityName = city.getAttribute("data-city-name");
-      const cityBox = city.getBBox();
+    const cityName = city.getAttribute("data-city-name");
+    const cityBox = city.getBBox();
 
-      if (!document.querySelector(`.city-label[data-city="${cityName}"]`)) {
-          const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
-          text.setAttribute("x", cityBox.x + cityBox.width/2);
-          text.setAttribute("y", cityBox.y + cityBox.height/2);
-          text.setAttribute("class", "city-label");
-          text.setAttribute("data-city", cityName);
-          text.textContent = cityName;
-          svgMap.appendChild(text);
-      }
+    if (!document.querySelector(`.city-label[data-city="${cityName}"]`)) {
+      const text = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      text.setAttribute("x", cityBox.x + cityBox.width/2);
+      text.setAttribute("y", cityBox.y + cityBox.height/2);
+      text.setAttribute("class", "city-label");
+      text.setAttribute("data-city", cityName);
+      text.textContent = cityName;
+      svgMap.appendChild(text);
+    }
   });
 }
 
@@ -620,164 +1009,83 @@ function removeCityLabels() {
   document.querySelectorAll(".city-label").forEach(label => label.remove());
 }
 
-// Event listener'lar
-document.getElementById("select-mode").addEventListener("click", () => {
-  mode = "select";
-  document.getElementById("select-mode").classList.add("active");
-  document.getElementById("click-mode").classList.remove("active");
-});
+// Initialize
+document.addEventListener("DOMContentLoaded", function() {
+  // Set up event listeners
+  const selectModeBtn = document.getElementById("select-mode");
+  const clickModeBtn = document.getElementById("click-mode");
+  const toggleNamesBtn = document.getElementById("toggle-city-names");
+  const resetBtn = document.getElementById("reset-selection");
 
-document.getElementById("click-mode").addEventListener("click", () => {
-  mode = "click";
-  document.getElementById("click-mode").classList.add("active");
-  document.getElementById("select-mode").classList.remove("active");
-});
+  if (selectModeBtn && clickModeBtn) {
+    selectModeBtn.addEventListener("click", () => {
+      mode = "select";
+      selectModeBtn.classList.add("active");
+      clickModeBtn.classList.remove("active");
+    });
 
-document.getElementById("toggle-city-names").addEventListener("click", () => {
-  showingCityNames = !showingCityNames;
-  const button = document.getElementById("toggle-city-names");
-  button.textContent = showingCityNames ? "İsimleri Gizle" : "İsimleri Göster";
-  
-  if (showingCityNames) addCityLabels();
-  else removeCityLabels();
-});
+    clickModeBtn.addEventListener("click", () => {
+      mode = "click";
+      clickModeBtn.classList.add("active");
+      selectModeBtn.classList.remove("active");
+    });
+  }
 
-document.getElementById("reset-selection").addEventListener("click", resetSelection);
+  if (toggleNamesBtn) {
+    toggleNamesBtn.addEventListener("click", () => {
+      showingCityNames = !showingCityNames;
+      toggleNamesBtn.textContent = showingCityNames ? "Hide Names" : "Show Names";
+      
+      if (showingCityNames) addCityLabels();
+      else removeCityLabels();
+    });
+  }
 
+  if (resetBtn) resetBtn.addEventListener("click", resetSelection);
 
-// GSYİH yüzdesini hesaplama ve gösterme
-
-
-// Canvas etkileşimleri
-selectionCanvas.addEventListener("mousedown", (event) => {
-  startClickTime = Date.now();
-  const rect = selectionCanvas.getBoundingClientRect();
-  const x = event.clientX - rect.left;
-  const y = event.clientY - rect.top;
-
-  isClicking = true;
-  selectionPath = [{ x, y }];
-  ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
-
-  selectionTimeout = setTimeout(() => {
-      if (isClicking) {
-          isSelecting = true;
-          isClicking = false;
+  // Mouse events
+  if (selectionCanvas) {
+    selectionCanvas.addEventListener("mousedown", handleMouseDown);
+    selectionCanvas.addEventListener("mousemove", handleMouseMove);
+    selectionCanvas.addEventListener("mouseup", handleMouseUp);
+    
+    // Click mode handler
+    selectionCanvas.addEventListener("click", (e) => {
+      if (mode === "click") {
+        handleCityClick(e);
       }
-  }, 300);
-});
-
-selectionCanvas.addEventListener("mousemove", (event) => {
-  if (mode === "select" && isSelecting) {
-      const rect = selectionCanvas.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-
-      selectionPath.push({ x, y });
-      ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
-      
-      ctx.beginPath();
-      ctx.moveTo(selectionPath[0].x, selectionPath[0].y);
-      selectionPath.forEach(point => ctx.lineTo(point.x, point.y));
-      ctx.closePath();
-      
-      ctx.strokeStyle = "rgba(0, 0, 255, 0.7)";
-      ctx.lineWidth = 5;
-      ctx.setLineDash([10, 5]);
-      ctx.stroke();
-  }
-});
-
-selectionCanvas.addEventListener("mouseup", (event) => {
-  const clickDuration = Date.now() - startClickTime;
-  clearTimeout(selectionTimeout);
-
-  if (clickDuration < 200 && mode === "click") {
-      handleCityClick(event);
-  } else if (isSelecting && mode === "select") {
-      isSelecting = false;
-      selectionTooltip.style.display = "none";
-
-      const rect = selectionCanvas.getBoundingClientRect();
-      let totalGdp = 0;
-      const selected = [];
-
-      document.querySelectorAll(".city").forEach(city => {
-          const cityRect = city.getBoundingClientRect();
-          const cityCenter = {
-              x: cityRect.left + cityRect.width / 2 - rect.left,
-              y: cityRect.top + cityRect.height / 2 - rect.top
-          };
-
-          const isInside = isPointInPolygon(cityCenter, selectionPath);
-          if (isInside) {
-              const cityName = city.getAttribute("data-city-name").toLowerCase();
-              const gdp = gdpData[cityName];
-              if (gdp) {
-                  totalGdp += gdp;
-                  city.style.fill = "rgba(255, 0, 0, 0.5)";
-                  city.classList.add("selected");
-                  selected.push(cityName);
-              }
-          }
-      });
-
-      selectedCities = selected;
-      updateComparisonSection(totalGdp, selectedCities);
+    });
   }
 
-  isSelecting = false;
-  isClicking = false;
-});
-
-// Şehir hover etkileşimleri
-document.querySelectorAll(".city").forEach(city => {
-  city.addEventListener("mouseenter", () => {
+  // City hover interactions
+  document.querySelectorAll(".city").forEach(city => {
+    city.addEventListener("mouseenter", () => {
       const cityName = city.getAttribute("data-city-name").toLowerCase();
       const gdp = gdpData[cityName];
-      if (gdp) {
-          tooltip.innerHTML = `<strong>${cityName.charAt(0).toUpperCase() + cityName.slice(1)}</strong><br>Toplam GSYİH: ${gdp.toLocaleString()} $`;
-          tooltip.style.opacity = "1";
+      if (gdp && tooltip) {
+        tooltip.innerHTML = `<strong>${cityName.charAt(0).toUpperCase() + cityName.slice(1)}</strong><br>Toplam GSYİH: ${formatNumber(gdp, 0)}`;
+        tooltip.style.opacity = "1";
       }
-  });
+    });
 
-  city.addEventListener("mousemove", (event) => {
-      const rect = mapContainer.getBoundingClientRect();
-      tooltip.style.left = `${event.clientX - rect.left + 10}px`;
-      tooltip.style.top = `${event.clientY - rect.top + 10}px`;
-  });
-
-  city.addEventListener("mouseleave", () => {
-      if (!city.classList.contains("selected")) {
-          tooltip.style.opacity = "0";
+    city.addEventListener("mousemove", (event) => {
+      if (tooltip && mapContainer) {
+        const rect = mapContainer.getBoundingClientRect();
+        tooltip.style.left = `${event.clientX - rect.left + 10}px`;
+        tooltip.style.top = `${event.clientY - rect.top + 10}px`;
       }
+    });
+
+    city.addEventListener("mouseleave", () => {
+      if (tooltip && !city.classList.contains("selected")) {
+        tooltip.style.opacity = "0";
+      }
+    });
   });
-});
 
-// Bayrak gösterme fonksiyonu
-function showCountryFlag(countryName) {
-  const flagElement = document.getElementById('country-flag');
-  const countryCode = countryCodes[countryName]?.toLowerCase();
-  
-  if (countryCode) {
-    // SVG versiyonunu kullanıyoruz
-    flagElement.src = `https://flagcdn.com/${countryCode}.svg`;
-    flagElement.alt = `${countryName} flag`;
-    flagElement.style.display = 'inline-block';
-    
-    // SVG'nin dalgalanma efektini engellemek için
-    flagElement.style.transform = 'none';
-    flagElement.style.animation = 'none';
-  } else {
-    flagElement.style.display = 'none';
-  }
-}
-
-// Sayfa yüklendiğinde
-window.addEventListener("load", () => {
+  // Initial setup
   resizeCanvas();
   updateComparisonSection(0, []);
-  addCityLabels();
 });
 
 window.addEventListener("resize", resizeCanvas);
