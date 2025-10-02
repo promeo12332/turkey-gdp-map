@@ -526,11 +526,7 @@ const countryGdpPerCapitaData = {
   "Australia": 64700,
   "Spain": 30904,
   "Mexico": 10495,
-<<<<<<< HEAD
   "Turkiye": 13632.5,
-=======
-  "Turkiye": 10676,
->>>>>>> 661a88b92ff7539133e9d9a070714835da9fff18
   "Indonesia": 4823,
   "Netherlands": 57767,
   "Saudi Arabia": 30036,
