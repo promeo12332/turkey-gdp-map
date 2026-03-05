@@ -937,7 +937,87 @@ function handleMouseUp(e) {
   updateComparisonSection(totalGdp, selectedCities);
 }
 
-// City click handler
+// ── Touch event helpers ──────────────────────────────────────────────────────
+
+function getTouchPos(touch) {
+  const rect = selectionCanvas.getBoundingClientRect();
+  return {
+    x: touch.clientX - rect.left,
+    y: touch.clientY - rect.top
+  };
+}
+
+function handleTouchStart(e) {
+  if (mode === 'select') {
+    e.preventDefault();
+    const pos = getTouchPos(e.touches[0]);
+    isSelecting = true;
+    selectionPath = [pos];
+    ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
+  }
+}
+
+function handleTouchMove(e) {
+  if (mode === 'select' && isSelecting) {
+    e.preventDefault();
+    const pos = getTouchPos(e.touches[0]);
+    selectionPath.push(pos);
+
+    ctx.clearRect(0, 0, selectionCanvas.width, selectionCanvas.height);
+    ctx.beginPath();
+    ctx.moveTo(selectionPath[0].x, selectionPath[0].y);
+    selectionPath.forEach(p => ctx.lineTo(p.x, p.y));
+    ctx.closePath();
+    ctx.strokeStyle = 'rgba(0, 0, 255, 0.7)';
+    ctx.lineWidth = 2;
+    ctx.setLineDash([5, 5]);
+    ctx.stroke();
+  }
+}
+
+function handleTouchEnd(e) {
+  e.preventDefault();
+
+  if (mode === 'select' && isSelecting) {
+    isSelecting = false;
+    const rect = selectionCanvas.getBoundingClientRect();
+    let totalGdp = 0;
+    const selected = [];
+
+    document.querySelectorAll('.city').forEach(city => {
+      const cityRect = city.getBoundingClientRect();
+      const cityCenter = {
+        x: cityRect.left + cityRect.width / 2 - rect.left,
+        y: cityRect.top + cityRect.height / 2 - rect.top
+      };
+      if (isPointInPolygon(cityCenter, selectionPath)) {
+        const cityName = city.getAttribute('data-city-name').toLowerCase();
+        const gdp = gdpData[cityName];
+        if (gdp) {
+          totalGdp += gdp;
+          city.style.fill = 'rgba(255, 0, 0, 0.5)';
+          city.classList.add('selected');
+          selected.push(cityName);
+        }
+      }
+    });
+
+    selectedCities = selected;
+    updateComparisonSection(totalGdp, selectedCities);
+
+    // Scroll to comparison panel on mobile so user can see results
+    if (window.innerWidth < 768) {
+      const compEl = document.getElementById('comparison-container');
+      if (compEl) compEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+  } else if (mode === 'click') {
+    const touch = e.changedTouches[0];
+    handleCityClick({ clientX: touch.clientX, clientY: touch.clientY });
+  }
+}
+
+// ── City click handler ────────────────────────────────────────────────────────
 function handleCityClick(event) {
   const rect = selectionCanvas.getBoundingClientRect();
   const clickX = event.clientX - rect.left;
@@ -1048,6 +1128,11 @@ document.addEventListener("DOMContentLoaded", function() {
     selectionCanvas.addEventListener("mousedown", handleMouseDown);
     selectionCanvas.addEventListener("mousemove", handleMouseMove);
     selectionCanvas.addEventListener("mouseup", handleMouseUp);
+    
+    // Touch events for mobile / tablet / smart board
+    selectionCanvas.addEventListener("touchstart", handleTouchStart, { passive: false });
+    selectionCanvas.addEventListener("touchmove",  handleTouchMove,  { passive: false });
+    selectionCanvas.addEventListener("touchend",   handleTouchEnd,   { passive: false });
     
     // Click mode handler
     selectionCanvas.addEventListener("click", (e) => {
