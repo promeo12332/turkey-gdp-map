@@ -1019,25 +1019,12 @@ function handleTouchEnd(e) {
 
 // ── City click handler ────────────────────────────────────────────────────────
 function handleCityClick(event) {
-  const rect = selectionCanvas.getBoundingClientRect();
-  const clickX = event.clientX - rect.left;
-  const clickY = event.clientY - rect.top;
-  
-  let clickedCity = null;
-  document.querySelectorAll(".city").forEach(city => {
-    const cityRect = city.getBoundingClientRect();
-    const cityCenterX = cityRect.left + cityRect.width/2 - rect.left;
-    const cityCenterY = cityRect.top + cityRect.height/2 - rect.top;
-    
-    const distance = Math.sqrt(
-      Math.pow(clickX - cityCenterX, 2) + 
-      Math.pow(clickY - cityCenterY, 2)
-    );
-    
-    if (distance <= cityRect.width/2) {
-      clickedCity = city;
-    }
-  });
+  // Geçici olarak canvas'ı tıklanamaz yap, altındaki SVG path'i bul
+  selectionCanvas.style.pointerEvents = 'none';
+  const el = document.elementFromPoint(event.clientX, event.clientY);
+  selectionCanvas.style.pointerEvents = 'auto';
+
+  const clickedCity = el && el.closest ? el.closest('.city') : null;
 
   if (clickedCity) {
     document.querySelectorAll(".city").forEach(c => {
